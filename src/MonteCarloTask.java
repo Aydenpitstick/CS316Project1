@@ -1,11 +1,12 @@
+import java.util.concurrent.Callable;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class MonteCarloTask implements Runnable {
+public class MonteCarloTask implements Callable<Long> {
 
-    public long pointsInCircle;
+    static long pointsInCircle;
     long taskTotalPoints = MultithreadedMonteCarlo.totalPoints/4;
 
-    public void run() {
+    public Long call() {
         for(long i = 0; i<taskTotalPoints; i++) {
             double x = ThreadLocalRandom.current().nextDouble(0, 2);
             double y = ThreadLocalRandom.current().nextDouble(0, 2);
@@ -15,5 +16,6 @@ public class MonteCarloTask implements Runnable {
                 pointsInCircle++;
             }
         }
+        return pointsInCircle;
     }
 }

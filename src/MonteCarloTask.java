@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MonteCarloTask implements Callable<Long> {
 
-    static long pointsInCircle;
+    long pointsInCircle;
     long taskTotalPoints = MultithreadedMonteCarlo.totalPoints/4;
 
     public Long call() {

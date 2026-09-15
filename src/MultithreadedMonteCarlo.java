@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 public class MultithreadedMonteCarlo{
-    public static final long totalPoints = 1_000_000;
+    public static final long totalPoints = 10_000_000_000L;
 
     static void main() throws Exception{
         Instant start = Instant.now();
